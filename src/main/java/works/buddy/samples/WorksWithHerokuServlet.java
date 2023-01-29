@@ -13,7 +13,7 @@ public class WorksWithHerokuServlet extends HttpServlet {
         response.setContentType("text/plain");
         response.setStatus(404);
         PrintWriter writer = response.getWriter();
-        writer.print("Buddy Works with Heroku");
+        writer.print("If you are able to see this message, it means i succeded in deploying a web application to tomcat via jenkins. It wasn't an easy task to come up with a script, so i added to an already created script");
         writer.close();
     }
 }
