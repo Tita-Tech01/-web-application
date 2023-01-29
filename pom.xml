@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>works.buddy</groupId>
     <artifactId>tita-techno</artifactId>
-    <version>1.2</version>
+    <version>1.0</version>
     <packaging>war</packaging>
    <properties>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -56,14 +56,14 @@
     <distributionManagement>
             <repository>
               <id>nexus</id>
-              <name>Bob-Tesla Releases Nexus Repository</name>
-              <url>http://18.213.246.34:8081/repository/tesla-releases/</url>
+              <name>Web-App Releases Nexus Repository</name>
+              <url>http://44.204.120.212:8081/repository/web-application-releases/</url>
             </repository>
 
             <snapshotRepository>
               <id>nexus</id>
               <name>Bob-Tesla Snapshot Nexus Repository </name>
-              <url>http://18.213.246.34:8081/repository/Tesla-snapshot/</url>
+              <url>http://44.204.120.212:8081/repository/web-application-snapshot/</url>
             </snapshotRepository>
 
     </distributionManagement>
