@@ -4,15 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>works.buddy</groupId>
     <artifactId>tita-techno</artifactId>
-    <version>1.2</version>
+    <version>1.0</version>
     <packaging>war</packaging>
-   <repositories>
-      <repository>
-	<id>nexus</id>
-	<name>nexus proxy Repo</name>
-	<url>http://18.213.246.34:8081/repository/Tesla-proxy/</url>
-      </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -33,20 +26,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <distributionManagement>
-            <repository>
-              <id>nexus</id>
-              <name>Bob-Tesla Releases Nexus Repository</name>
-              <url>http://18.213.246.34:8081/repository/tesla-releases/</url>
-            </repository>
-
-            <snapshotRepository>
-              <id>nexus</id>
-              <name>Bob-Tesla Snapshot Nexus Repository </name>
-              <url>http://18.213.246.34:8081/repository/Tesla-snapshot/</url>
-            </snapshotRepository>
-
-    </distributionManagement>
 
     <build>
         <plugins>
