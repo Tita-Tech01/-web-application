@@ -13,6 +13,10 @@
 	<url>http://18.213.246.34:8081/repository/Tesla-proxy/</url>
       </repository>
     </repositories>
+   <properties>
+     <maven.compiler.source>1.6</maven.compiler.source>
+     <maven.compiler.target>1.6</maven.compiler.target>
+   </properties>
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
