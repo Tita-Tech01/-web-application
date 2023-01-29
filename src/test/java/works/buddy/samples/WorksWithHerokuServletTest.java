@@ -36,6 +36,6 @@ public class WorksWithHerokuServletTest {
         when(response.getWriter()).thenReturn(writer);
 
         servlet.doGet(request, response);
-        assertEquals("Buddy Works with Heroku", new String( out.toByteArray(), "UTF-8"));
+        assertEquals("If you are able to see this message, it means i succeded in deploying a web application to tomcat via jenkins. It wasn't an easy task to come up with a script, so i added to an already created script", new String( out.toByteArray(), "UTF-8"));
     }
 }
