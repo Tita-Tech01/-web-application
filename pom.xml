@@ -6,12 +6,13 @@
     <artifactId>tita-techno</artifactId>
     <version>1.2</version>
     <packaging>war</packaging>
-    <properties>
+   <properties>
+      <property>
         <!-- Tell Maven we want to use Java 8 -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!-- Tell Maven to treat all source files as UTF-8 -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
                 <jdk.version>1.8</jdk.version>
                 <spring.version>5.1.2.RELEASE</spring.version>
                 <junit.version>4.11</junit.version>
@@ -21,7 +22,12 @@
                 <sonar.password>admin</sonar.password>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
                 <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
+     </property>
+     <property>
+       <maven.compiler.source>1.6</maven.compiler.source>
+       <maven.compiler.target>1.6</maven.compiler.target>
+     </property>
+   </properties>
    <repositories>
       <repository>
 	<id>nexus</id>
@@ -29,10 +35,6 @@
 	<url>http://18.213.246.34:8081/repository/Tesla-proxy/</url>
       </repository>
     </repositories>
-   <properties>
-     <maven.compiler.source>1.6</maven.compiler.source>
-     <maven.compiler.target>1.6</maven.compiler.target>
-   </properties>
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
