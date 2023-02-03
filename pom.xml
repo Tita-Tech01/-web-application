@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>works.buddy</groupId>
-    <artifactId>tita-techno</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <artifactId>new-techn</artifactId>
+    <version>1.6-SNAPSHOT</version>
     <packaging>war</packaging>
    <properties>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
