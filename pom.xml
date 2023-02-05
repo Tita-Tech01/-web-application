@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>works.buddy</groupId>
     <artifactId>new-techn</artifactId>
-    <version>1.8-SNAPSHOT</version>
+    <version>1.9-SNAPSHOT</version>
     <packaging>war</packaging>
    <properties>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
