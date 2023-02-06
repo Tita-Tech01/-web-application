@@ -1,0 +1,82 @@
+pipeline
+{
+	agent any
+	tools {
+		maven "Maven 3.8.7"
+		  }
+	stages {
+		stage ('1GetCode')
+			{steps{
+				sh "echo 'cloning the latest application' "
+				git branch: 'develop', credentialsId: 'github credentials', url: 'https://github.com/Tita-Tech01/-web-application.git'
+				}
+			}
+		stage ('2Test&Build')
+			{steps{
+				sh "echo 'running JUnit-test-cases' "
+				sh "echo 'testing mush pass to create artifacts'"
+				sh "mvn clean package"
+				}
+			}
+	    stage ('3CodeQuality')
+			{steps{
+				sh "echo 'Perform CodeQuality Analysis' "
+				sh "mvn clean sonar:sonar"
+				   }
+			}
+		stage ('4UploadNexus')
+			{steps{
+				sh "echo 'Upload Artifacts to Nexus' "
+				sh "mvn deploy"
+				   }
+			}
+		stage ('5Deploy')
+			{steps{
+				sh "echo 'Deploy to prod' "
+				deploy adapters: [tomcat9(credentialsId: 'bob_tomcat_credential', path: '', url: 'http://100.24.20.142:8080/')], contextPath: null, war: 'target/*war'
+				   }
+			}
+		stage ('7Approval')
+		    {steps{
+				sh "echo 'Review Deployment, then Approve Or Deny the Deployment' "
+				timeout(time:5, unit:'DAYS')
+				{input message: 'Application ready for deployment, Please review and approve'
+			    }
+					}
+			}
+		stage ('8Deploy2prod')
+		    {steps{
+				sh "echo 'Upload Artifacts to Nexus' "
+				sh "mvn deploy"
+				   }
+		    }
+		stage ('9Notification')
+		    {steps{
+				sh "echo 'Upload Artifacts to Nexus' "
+				sh "mvn deploy"
+				   }
+		    }
+		   }
+	post {
+		always{
+		emailext body: '''Hi team,
+Deployment running.
+
+Regard,
+Web App Team.''', subject: 'Check ongoing Deployment web application', to: 'titauc@yahoo.com'}
+		success{
+			emailext body: '''Hi team,
+Deployment ran successfully.
+
+Regard,
+Web App Team.''', subject: 'Successful: Deployment web application', to: 'titauc@yahoo.com'
+					}
+		failure{
+		emailext body: '''Hi team,
+Deployment Failed.
+
+Regard,
+Web App Team.''', subject: 'Failed: Deployment web application', to: 'titauc@yahoo.com'}
+		  }
+}
+            
