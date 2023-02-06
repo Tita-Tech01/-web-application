@@ -63,7 +63,7 @@
             <snapshotRepository>
               <id>nexus</id>
               <name>Bob-Tesla Snapshot Nexus Repository </name>
-              <url>http://44.203.34.5:8081/repository/web-application-snapshot/</url>
+              <url>http://44.203.34.57:8081/repository/web-application-snapshot/</url>
             </snapshotRepository>
 
     </distributionManagement>
